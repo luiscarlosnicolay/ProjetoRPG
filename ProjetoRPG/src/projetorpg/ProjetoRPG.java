@@ -16,6 +16,15 @@ public class ProjetoRPG {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        //INICIALIZAÇÕES DO JOGO
+        System.out.println("Inicialização ...");
+        
+        //ABERTURA DA TELA INICIAL
+        Principal tela = new Principal();
+        tela.setResizable(false);
+        tela.setVisible(true);
+        
     }
     
 }
