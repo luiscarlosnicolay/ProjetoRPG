@@ -28,16 +28,16 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         lbl1 = new javax.swing.JLabel();
-        btn1 = new javax.swing.JButton();
-        btn2 = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        btnAvancar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lbl1.setText("Label1");
 
-        btn1.setText("Botão 1");
+        btnCancelar.setText("Cancelar");
 
-        btn2.setText("Botão 2");
+        btnAvancar.setText("Avançar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -49,9 +49,9 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addComponent(btn1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
-                .addComponent(btn2)
+                .addComponent(btnCancelar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+                .addComponent(btnAvancar)
                 .addGap(50, 50, 50))
         );
         layout.setVerticalGroup(
@@ -61,8 +61,8 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(lbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn1)
-                    .addComponent(btn2))
+                    .addComponent(btnCancelar)
+                    .addComponent(btnAvancar))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
 
@@ -105,8 +105,8 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1;
-    private javax.swing.JButton btn2;
+    private javax.swing.JButton btnAvancar;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JLabel lbl1;
     // End of variables declaration//GEN-END:variables
 }

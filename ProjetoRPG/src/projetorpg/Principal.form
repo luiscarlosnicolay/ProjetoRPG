@@ -30,9 +30,9 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-              <Component id="btn1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="165" max="32767" attributes="0"/>
-              <Component id="btn2" min="-2" max="-2" attributes="0"/>
+              <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="155" max="32767" attributes="0"/>
+              <Component id="btnAvancar" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -44,8 +44,8 @@
               <Component id="lbl1" min="-2" pref="65" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btn1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAvancar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="183" max="32767" attributes="0"/>
           </Group>
@@ -58,14 +58,14 @@
         <Property name="text" type="java.lang.String" value="Label1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btn1">
+    <Component class="javax.swing.JButton" name="btnCancelar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Bot&#xe3;o 1"/>
+        <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btn2">
+    <Component class="javax.swing.JButton" name="btnAvancar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Bot&#xe3;o 2"/>
+        <Property name="text" type="java.lang.String" value="Avan&#xe7;ar"/>
       </Properties>
     </Component>
   </SubComponents>
