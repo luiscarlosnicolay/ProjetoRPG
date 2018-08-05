@@ -31,13 +31,13 @@ public class Principal extends javax.swing.JFrame {
         lbl1 = new javax.swing.JLabel();
         btnSair = new javax.swing.JButton();
         btnAvancar = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButtonMago = new javax.swing.JRadioButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
+        jRadioButtonFeiticeiro = new javax.swing.JRadioButton();
+        jRadioButtonBruxo = new javax.swing.JRadioButton();
+        jRadioButtonGuerreiro = new javax.swing.JRadioButton();
+        jRadioButtonVampiro = new javax.swing.JRadioButton();
+        jRadioButtonLobisomem = new javax.swing.JRadioButton();
         jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,28 +58,28 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("Mago");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(jRadioButtonMago);
+        jRadioButtonMago.setText("Mago");
+        jRadioButtonMago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                jRadioButtonMagoActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Feiticeiro");
+        buttonGroup1.add(jRadioButtonFeiticeiro);
+        jRadioButtonFeiticeiro.setText("Feiticeiro");
 
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setText("Bruxo");
+        buttonGroup1.add(jRadioButtonBruxo);
+        jRadioButtonBruxo.setText("Bruxo");
 
-        buttonGroup1.add(jRadioButton4);
-        jRadioButton4.setText("Guerreiro");
+        buttonGroup1.add(jRadioButtonGuerreiro);
+        jRadioButtonGuerreiro.setText("Guerreiro");
 
-        buttonGroup1.add(jRadioButton5);
-        jRadioButton5.setText("Vampiro");
+        buttonGroup1.add(jRadioButtonVampiro);
+        jRadioButtonVampiro.setText("Vampiro");
 
-        buttonGroup1.add(jRadioButton6);
-        jRadioButton6.setText("Lobisomem");
+        buttonGroup1.add(jRadioButtonLobisomem);
+        jRadioButtonLobisomem.setText("Lobisomem");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -93,14 +93,14 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(lbl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jRadioButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jRadioButtonMago, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jRadioButtonFeiticeiro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jRadioButtonBruxo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jRadioButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jRadioButtonGuerreiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jRadioButtonVampiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jRadioButtonLobisomem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnSair)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -117,16 +117,16 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton4))
+                    .addComponent(jRadioButtonMago)
+                    .addComponent(jRadioButtonGuerreiro))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton5))
+                    .addComponent(jRadioButtonFeiticeiro)
+                    .addComponent(jRadioButtonVampiro))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton6))
+                    .addComponent(jRadioButtonBruxo)
+                    .addComponent(jRadioButtonLobisomem))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -139,9 +139,9 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void jRadioButtonMagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMagoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_jRadioButtonMagoActionPerformed
 
     private void btnAvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvancarActionPerformed
         // TODO add your handling code here:
@@ -191,12 +191,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnAvancar;
     private javax.swing.JButton btnSair;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButtonBruxo;
+    private javax.swing.JRadioButton jRadioButtonFeiticeiro;
+    private javax.swing.JRadioButton jRadioButtonGuerreiro;
+    private javax.swing.JRadioButton jRadioButtonLobisomem;
+    private javax.swing.JRadioButton jRadioButtonMago;
+    private javax.swing.JRadioButton jRadioButtonVampiro;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lbl1;
