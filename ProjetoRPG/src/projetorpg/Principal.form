@@ -133,6 +133,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Feiticeiro"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonFeiticeiroActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButtonBruxo">
       <Properties>
@@ -141,6 +144,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Bruxo"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonBruxoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButtonGuerreiro">
       <Properties>
@@ -149,6 +155,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Guerreiro"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonGuerreiroActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButtonVampiro">
       <Properties>
@@ -157,6 +166,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Vampiro"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonVampiroActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButtonLobisomem">
       <Properties>
@@ -165,6 +177,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Lobisomem"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonLobisomemActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator2">
     </Component>
