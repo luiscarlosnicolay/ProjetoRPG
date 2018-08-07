@@ -148,7 +148,7 @@ public class Principal extends javax.swing.JFrame {
          if (jRadioButtonGuerreiro.isSelected()) {
              //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Guerreiro!");
              Personagem guerreiro = new Personagem ();
-             guerreiro.setNome("Janquiel Dragons");
+             guerreiro.setNome("Wernen");
              guerreiro.setClasse("Guerreiro");
              guerreiro.setNivel(0);
              guerreiro.setVida(100);
@@ -158,7 +158,7 @@ public class Principal extends javax.swing.JFrame {
          }else if (jRadioButtonMago.isSelected()){
              //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Mago!");
              Personagem mago = new Personagem ();
-             mago.setNome("Luis Magic");
+             mago.setNome("Crisly");
              mago.setClasse("Mago");
              mago.setNivel(0);
              mago.setVida(50);
@@ -168,8 +168,8 @@ public class Principal extends javax.swing.JFrame {
          }else if (jRadioButtonFeiticeiro.isSelected()){
              //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Mago!");
              Personagem feiticeiro = new Personagem ();
-             feiticeiro.setNome("Feiticeiro");
-             feiticeiro.setClasse("Teste");
+             feiticeiro.setNome("Nanak");
+             feiticeiro.setClasse("Feiticeiro");
              feiticeiro.setNivel(0);
              feiticeiro.setVida(80);
              feiticeiro.setAtaque(190);
@@ -178,8 +178,8 @@ public class Principal extends javax.swing.JFrame {
          }else if (jRadioButtonLobisomem.isSelected()){
              //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Mago!");
              Personagem lobisomem = new Personagem ();
-             lobisomem.setNome("Lobisomem");
-             lobisomem.setClasse("Lobi");
+             lobisomem.setNome("Tsope");
+             lobisomem.setClasse("Lobisomem");
              lobisomem.setNivel(0);
              lobisomem.setVida(70);
              lobisomem.setAtaque(185);
@@ -188,8 +188,8 @@ public class Principal extends javax.swing.JFrame {
          }else if (jRadioButtonVampiro.isSelected()){
              //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Mago!");
              Personagem vampiro = new Personagem ();
-             vampiro.setNome("Vampiro");
-             vampiro.setClasse("Vamp");
+             vampiro.setNome("Daben");
+             vampiro.setClasse("Vampiro");
              vampiro.setNivel(0);
              vampiro.setVida(40);
              vampiro.setAtaque(130);
@@ -198,34 +198,12 @@ public class Principal extends javax.swing.JFrame {
          }else if (jRadioButtonBruxo.isSelected()){
              //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Mago!");
              Personagem bruxo = new Personagem ();
-             bruxo.setNome("Bruxo");
-             bruxo.setClasse("heuaheu");
+             bruxo.setNome("Harry Potter");
+             bruxo.setClasse("Bruxo");
              bruxo.setNivel(0);
              bruxo.setVida(40);
              bruxo.setAtaque(130);
              JOptionPane.showMessageDialog(this,"Atributos do persnonagem escolhido:\n" + bruxo.toString());
-         }
-         else if (jRadioButtonVampiro.isSelected()){
-             JOptionPane.showMessageDialog(this, "Você escolheu o personagem Vampiro!");
-             Personagem vampiro = new Personagem ();
-             vampiro.setNome("Eric Vampire");
-             vampiro.setClasse("Vampiro");
-             vampiro.setNivel(0);
-             vampiro.setVida(150);
-             vampiro.setAtaque(95);
-             System.out.println("Atributos do persnonagem escolhido:\n" + vampiro.toString());
-             
-         }
-         else if (jRadioButtonBruxo.isSelected()){
-             JOptionPane.showMessageDialog(this, "Você escolheu o personagem Bruxo!");
-             Personagem bruxo = new Personagem ();
-             bruxo.setNome("Harry Potter");
-             bruxo.setClasse("Bruxo");
-             bruxo.setNivel(0);
-             bruxo.setVida(100);
-             bruxo.setAtaque(230);
-             System.out.println("Atributos do persnonagem escolhido:\n" + bruxo.toString());
-             
          }
          }
     }//GEN-LAST:event_btnAvancarActionPerformed
