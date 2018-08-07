@@ -170,6 +170,13 @@ public class Principal extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(this,"Atributos do persnonagem escolhido:\n" + ilusionista.toString());
          }
         }
+        
+        //Avançar para tela de confronto
+        TelaConfronto tela = new TelaConfronto();
+        tela.setVisible(true);
+        
+        //Colocar a tela atual não visível
+        this.setVisible(false);
     }//GEN-LAST:event_btnAvancarActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
