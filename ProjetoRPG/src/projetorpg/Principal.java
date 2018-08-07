@@ -205,6 +205,17 @@ public class Principal extends javax.swing.JFrame {
              bruxo.setAtaque(130);
              JOptionPane.showMessageDialog(this,"Atributos do persnonagem escolhido:\n" + bruxo.toString());
          }
+         else if (jRadioButtonVampiro.isSelected()){
+             JOptionPane.showMessageDialog(this, "Você escolheu o personagem Vampiro!");
+             Personagem vampiro = new Personagem ();
+             vampiro.setNome("Eric Vampire");
+             vampiro.setClasse("Vampiro");
+             vampiro.setNivel(0);
+             vampiro.setVida(150);
+             vampiro.setAtaque(95);
+             System.out.println("Atributos do persnonagem escolhido:\n" + vampiro.toString());
+             
+         }
          }
     }//GEN-LAST:event_btnAvancarActionPerformed
 
