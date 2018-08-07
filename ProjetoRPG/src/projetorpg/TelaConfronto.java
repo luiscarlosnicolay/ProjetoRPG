@@ -14,8 +14,13 @@ public class TelaConfronto extends javax.swing.JFrame {
     /**
      * Creates new form TelaConfronto
      */
-    public TelaConfronto() {
+    public TelaConfronto(Personagem personagem) {
         initComponents();
+        //Preenche o nome da Classe escolhida
+        lblClasse.setText(personagem.getClasse());
+        
+        
+        
     }
 
     /**
@@ -27,14 +32,17 @@ public class TelaConfronto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblPersonagem = new javax.swing.JLabel();
+        lblVida = new javax.swing.JLabel();
+        lblClasse = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Personagem:");
+        lblPersonagem.setText("Personagem:");
 
-        jLabel2.setText("Vida:");
+        lblVida.setText("Vida:");
+
+        lblClasse.setText("...");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -42,9 +50,11 @@ public class TelaConfronto extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addComponent(lblPersonagem)
+                .addGap(18, 18, 18)
+                .addComponent(lblClasse)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
+                .addComponent(lblVida)
                 .addGap(142, 142, 142))
         );
         layout.setVerticalGroup(
@@ -52,8 +62,9 @@ public class TelaConfronto extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(lblPersonagem)
+                    .addComponent(lblVida)
+                    .addComponent(lblClasse))
                 .addContainerGap(265, Short.MAX_VALUE))
         );
 
@@ -90,13 +101,14 @@ public class TelaConfronto extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaConfronto().setVisible(true);
+                new TelaConfronto(null).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblClasse;
+    private javax.swing.JLabel lblPersonagem;
+    private javax.swing.JLabel lblVida;
     // End of variables declaration//GEN-END:variables
 }

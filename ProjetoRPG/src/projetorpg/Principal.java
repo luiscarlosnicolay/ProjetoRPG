@@ -124,7 +124,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnAvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvancarActionPerformed
         // TODO add your handling code here:
-        if ((!jRadioButtonMago.isSelected()) && (!jRadioButtonFeiticeiro.isSelected()) && 
+        /*if ((!jRadioButtonMago.isSelected()) && (!jRadioButtonFeiticeiro.isSelected()) && 
             (!jRadioButtonGuerreiro.isSelected()) && (!jRadioButtonIlusionista.isSelected())) {
               JOptionPane.showMessageDialog(this, "Selecione um personagem!");
         } else {
@@ -169,16 +169,54 @@ public class Principal extends javax.swing.JFrame {
              ilusionista.setAtaque(130);
              JOptionPane.showMessageDialog(this,"Atributos do persnonagem escolhido:\n" + ilusionista.toString());
          }
-        }
+        }*/
+        Personagem personagemEscolhido = escolherClasse();
         
         //Avançar para tela de confronto
-        TelaConfronto tela = new TelaConfronto();
+        TelaConfronto tela = new TelaConfronto(personagemEscolhido);
+        
         tela.setVisible(true);
         
         //Colocar a tela atual não visível
         this.setVisible(false);
     }//GEN-LAST:event_btnAvancarActionPerformed
 
+    
+    private Personagem escolherClasse() {
+    try{
+        Personagem personagem = new Personagem();
+        //Preenche os atributos do personagem conforme a classe escolhida
+        if(jRadioButtonGuerreiro.isSelected()) {
+             personagem.setNome("Akiles");
+             personagem.setClasse("Guerreiro");
+             personagem.setNivel(0);
+             personagem.setVida(100);
+             personagem.setAtaque(200);
+        }else if(jRadioButtonMago.isSelected()) {
+             personagem.setNome("Criotek");
+             personagem.setClasse("Mago");
+             personagem.setNivel(0);
+             personagem.setVida(50);
+             personagem.setAtaque(150);
+        }else if(jRadioButtonFeiticeiro.isSelected()) {
+             personagem.setNome("Nanak");
+             personagem.setClasse("Feiticeiro");
+             personagem.setNivel(0);
+             personagem.setVida(80);
+             personagem.setAtaque(190);
+        }else if(jRadioButtonIlusionista.isSelected()) {
+             personagem.setNome("Daben");
+             personagem.setClasse("Ilusionista");
+             personagem.setNivel(0);
+             personagem.setVida(40);
+             personagem.setAtaque(130);            
+        }
+        
+        return personagem;
+    }catch(Exception ex){
+        return null;
+    }
+}
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
         System.exit(0);
