@@ -36,10 +36,8 @@ public class Principal extends javax.swing.JFrame {
         jRadioButtonMago = new javax.swing.JRadioButton();
         jSeparator1 = new javax.swing.JSeparator();
         jRadioButtonFeiticeiro = new javax.swing.JRadioButton();
-        jRadioButtonBruxo = new javax.swing.JRadioButton();
         jRadioButtonGuerreiro = new javax.swing.JRadioButton();
-        jRadioButtonVampiro = new javax.swing.JRadioButton();
-        jRadioButtonLobisomem = new javax.swing.JRadioButton();
+        jRadioButtonIlusionista = new javax.swing.JRadioButton();
         jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,17 +64,11 @@ public class Principal extends javax.swing.JFrame {
         buttonGroup1.add(jRadioButtonFeiticeiro);
         jRadioButtonFeiticeiro.setText("Feiticeiro");
 
-        buttonGroup1.add(jRadioButtonBruxo);
-        jRadioButtonBruxo.setText("Bruxo");
-
         buttonGroup1.add(jRadioButtonGuerreiro);
         jRadioButtonGuerreiro.setText("Guerreiro");
 
-        buttonGroup1.add(jRadioButtonVampiro);
-        jRadioButtonVampiro.setText("Vampiro");
-
-        buttonGroup1.add(jRadioButtonLobisomem);
-        jRadioButtonLobisomem.setText("Lobisomem");
+        buttonGroup1.add(jRadioButtonIlusionista);
+        jRadioButtonIlusionista.setText("Ilusionista");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,18 +83,15 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jRadioButtonMago, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButtonFeiticeiro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButtonBruxo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jRadioButtonFeiticeiro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jRadioButtonGuerreiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButtonVampiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButtonLobisomem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jRadioButtonIlusionista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnSair)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAvancar)
-                        .addGap(9, 9, 9)))
+                        .addComponent(btnAvancar)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -119,14 +108,10 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButtonFeiticeiro)
-                    .addComponent(jRadioButtonVampiro))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButtonBruxo)
-                    .addComponent(jRadioButtonLobisomem))
+                    .addComponent(jRadioButtonIlusionista))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSair)
                     .addComponent(btnAvancar))
@@ -140,15 +125,14 @@ public class Principal extends javax.swing.JFrame {
     private void btnAvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvancarActionPerformed
         // TODO add your handling code here:
         if ((!jRadioButtonMago.isSelected()) && (!jRadioButtonFeiticeiro.isSelected()) && 
-            (!jRadioButtonGuerreiro.isSelected()) && (!jRadioButtonLobisomem.isSelected()) && 
-            (!jRadioButtonVampiro.isSelected()) &&  (!jRadioButtonBruxo.isSelected())) {
+            (!jRadioButtonGuerreiro.isSelected()) && (!jRadioButtonIlusionista.isSelected())) {
               JOptionPane.showMessageDialog(this, "Selecione um personagem!");
         } else {
             
          if (jRadioButtonGuerreiro.isSelected()) {
              //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Guerreiro!");
              Personagem guerreiro = new Personagem ();
-             guerreiro.setNome("Wernen");
+             guerreiro.setNome("Akiles");
              guerreiro.setClasse("Guerreiro");
              guerreiro.setNivel(0);
              guerreiro.setVida(100);
@@ -158,7 +142,7 @@ public class Principal extends javax.swing.JFrame {
          }else if (jRadioButtonMago.isSelected()){
              //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Mago!");
              Personagem mago = new Personagem ();
-             mago.setNome("Crisly");
+             mago.setNome("Criotek");
              mago.setClasse("Mago");
              mago.setNivel(0);
              mago.setVida(50);
@@ -175,37 +159,17 @@ public class Principal extends javax.swing.JFrame {
              feiticeiro.setAtaque(190);
              JOptionPane.showMessageDialog(this,"Atributos do persnonagem escolhido:\n" + feiticeiro.toString());
              
-         }else if (jRadioButtonLobisomem.isSelected()){
+         }else if (jRadioButtonIlusionista.isSelected()){
              //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Mago!");
-             Personagem lobisomem = new Personagem ();
-             lobisomem.setNome("Tsope");
-             lobisomem.setClasse("Lobisomem");
-             lobisomem.setNivel(0);
-             lobisomem.setVida(70);
-             lobisomem.setAtaque(185);
-             JOptionPane.showMessageDialog(this,"Atributos do persnonagem escolhido:\n" + lobisomem.toString());
-             
-         }else if (jRadioButtonVampiro.isSelected()){
-             //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Mago!");
-             Personagem vampiro = new Personagem ();
-             vampiro.setNome("Daben");
-             vampiro.setClasse("Vampiro");
-             vampiro.setNivel(0);
-             vampiro.setVida(40);
-             vampiro.setAtaque(130);
-             JOptionPane.showMessageDialog(this,"Atributos do persnonagem escolhido:\n" + vampiro.toString());
-             
-         }else if (jRadioButtonBruxo.isSelected()){
-             //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Mago!");
-             Personagem bruxo = new Personagem ();
-             bruxo.setNome("Harry Potter");
-             bruxo.setClasse("Bruxo");
-             bruxo.setNivel(0);
-             bruxo.setVida(40);
-             bruxo.setAtaque(130);
-             JOptionPane.showMessageDialog(this,"Atributos do persnonagem escolhido:\n" + bruxo.toString());
+             Personagem ilusionista = new Personagem ();
+             ilusionista.setNome("Daben");
+             ilusionista.setClasse("Ilusionista");
+             ilusionista.setNivel(0);
+             ilusionista.setVida(40);
+             ilusionista.setAtaque(130);
+             JOptionPane.showMessageDialog(this,"Atributos do persnonagem escolhido:\n" + ilusionista.toString());
          }
-         }
+        }
     }//GEN-LAST:event_btnAvancarActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
@@ -252,12 +216,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnAvancar;
     private javax.swing.JButton btnSair;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JRadioButton jRadioButtonBruxo;
     private javax.swing.JRadioButton jRadioButtonFeiticeiro;
     private javax.swing.JRadioButton jRadioButtonGuerreiro;
-    private javax.swing.JRadioButton jRadioButtonLobisomem;
+    private javax.swing.JRadioButton jRadioButtonIlusionista;
     private javax.swing.JRadioButton jRadioButtonMago;
-    private javax.swing.JRadioButton jRadioButtonVampiro;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lbl1;

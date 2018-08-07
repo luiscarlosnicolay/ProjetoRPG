@@ -37,20 +37,17 @@
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="jRadioButtonMago" alignment="0" max="32767" attributes="0"/>
                           <Component id="jRadioButtonFeiticeiro" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jRadioButtonBruxo" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="234" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jRadioButtonGuerreiro" max="32767" attributes="0"/>
-                          <Component id="jRadioButtonVampiro" max="32767" attributes="0"/>
-                          <Component id="jRadioButtonLobisomem" max="32767" attributes="0"/>
+                          <Component id="jRadioButtonIlusionista" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="btnSair" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnAvancar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -72,16 +69,11 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jRadioButtonFeiticeiro" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButtonVampiro" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jRadioButtonBruxo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButtonLobisomem" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRadioButtonIlusionista" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnSair" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnAvancar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -131,14 +123,6 @@
         <Property name="text" type="java.lang.String" value="Feiticeiro"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButtonBruxo">
-      <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="buttonGroup1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Bruxo"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButtonGuerreiro">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
@@ -147,20 +131,12 @@
         <Property name="text" type="java.lang.String" value="Guerreiro"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButtonVampiro">
+    <Component class="javax.swing.JRadioButton" name="jRadioButtonIlusionista">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="buttonGroup1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Vampiro"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButtonLobisomem">
-      <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="buttonGroup1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Lobisomem"/>
+        <Property name="text" type="java.lang.String" value="Ilusionista"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator2">
