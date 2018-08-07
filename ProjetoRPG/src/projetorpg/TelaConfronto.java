@@ -17,7 +17,11 @@ public class TelaConfronto extends javax.swing.JFrame {
     public TelaConfronto(Personagem personagem) {
         initComponents();
         //Preenche o nome da Classe escolhida
+        lblNome.setText(personagem.getNome());
         lblClasse.setText(personagem.getClasse());
+        lblNivel.setText(Integer.toString(personagem.getNivel()));
+        lblVida.setText(Integer.toString(personagem.getVida()));
+        lblAtaque.setText(Integer.toString(personagem.getAtaque()));
         
         
         
@@ -32,40 +36,96 @@ public class TelaConfronto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblPersonagem = new javax.swing.JLabel();
-        lblVida = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        lblNome = new javax.swing.JLabel();
         lblClasse = new javax.swing.JLabel();
+        lblNivel = new javax.swing.JLabel();
+        lblVida = new javax.swing.JLabel();
+        lblAtaque = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblPersonagem.setText("Personagem:");
+        jLabel2.setText("Nome:");
 
-        lblVida.setText("Vida:");
+        jLabel5.setText("Vida:");
+
+        jLabel3.setText("Classe:");
+
+        jLabel4.setText("Nível:");
+
+        jLabel1.setText("Ataque:");
+
+        lblNome.setText("...");
 
         lblClasse.setText("...");
+
+        lblNivel.setText("...");
+
+        lblVida.setText("...");
+
+        lblAtaque.setText("...");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(lblPersonagem)
-                .addGap(18, 18, 18)
-                .addComponent(lblClasse)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
-                .addComponent(lblVida)
-                .addGap(142, 142, 142))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addGap(2, 2, 2)
+                            .addComponent(lblClasse))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(lblNome)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblNivel)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblVida))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblAtaque)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPersonagem)
-                    .addComponent(lblVida)
+                    .addComponent(jLabel2)
+                    .addComponent(lblNome))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
                     .addComponent(lblClasse))
-                .addContainerGap(265, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(lblNivel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(lblVida))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(lblAtaque))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         pack();
@@ -107,8 +167,15 @@ public class TelaConfronto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel lblAtaque;
     private javax.swing.JLabel lblClasse;
-    private javax.swing.JLabel lblPersonagem;
+    private javax.swing.JLabel lblNivel;
+    private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblVida;
     // End of variables declaration//GEN-END:variables
 }
