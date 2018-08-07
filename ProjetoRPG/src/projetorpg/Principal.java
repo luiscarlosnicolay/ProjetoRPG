@@ -146,25 +146,64 @@ public class Principal extends javax.swing.JFrame {
         } else {
             
          if (jRadioButtonGuerreiro.isSelected()) {
-             JOptionPane.showMessageDialog(this, "Você escolheu o personagem Guerreiro!");
+             //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Guerreiro!");
              Personagem guerreiro = new Personagem ();
              guerreiro.setNome("Janquiel Dragons");
              guerreiro.setClasse("Guerreiro");
              guerreiro.setNivel(0);
              guerreiro.setVida(100);
              guerreiro.setAtaque(200);
-             System.out.println("Atributos do persnonagem escolhido:\n" + guerreiro.toString());
-         }
-         else if (jRadioButtonMago.isSelected()){
-             JOptionPane.showMessageDialog(this, "Você escolheu o personagem Mago!");
+             JOptionPane.showMessageDialog(this,"Atributos do persnonagem escolhido:\n" + guerreiro.toString());
+             
+         }else if (jRadioButtonMago.isSelected()){
+             //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Mago!");
              Personagem mago = new Personagem ();
              mago.setNome("Luis Magic");
              mago.setClasse("Mago");
              mago.setNivel(0);
              mago.setVida(50);
              mago.setAtaque(150);
-             System.out.println("Atributos do persnonagem escolhido:\n" + mago.toString());
+             JOptionPane.showMessageDialog(this,"Atributos do persnonagem escolhido:\n" + mago.toString());
              
+         }else if (jRadioButtonFeiticeiro.isSelected()){
+             //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Mago!");
+             Personagem feiticeiro = new Personagem ();
+             feiticeiro.setNome("Feiticeiro");
+             feiticeiro.setClasse("Teste");
+             feiticeiro.setNivel(0);
+             feiticeiro.setVida(80);
+             feiticeiro.setAtaque(190);
+             JOptionPane.showMessageDialog(this,"Atributos do persnonagem escolhido:\n" + feiticeiro.toString());
+             
+         }else if (jRadioButtonLobisomem.isSelected()){
+             //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Mago!");
+             Personagem lobisomem = new Personagem ();
+             lobisomem.setNome("Lobisomem");
+             lobisomem.setClasse("Lobi");
+             lobisomem.setNivel(0);
+             lobisomem.setVida(70);
+             lobisomem.setAtaque(185);
+             JOptionPane.showMessageDialog(this,"Atributos do persnonagem escolhido:\n" + lobisomem.toString());
+             
+         }else if (jRadioButtonVampiro.isSelected()){
+             //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Mago!");
+             Personagem vampiro = new Personagem ();
+             vampiro.setNome("Vampiro");
+             vampiro.setClasse("Vamp");
+             vampiro.setNivel(0);
+             vampiro.setVida(40);
+             vampiro.setAtaque(130);
+             JOptionPane.showMessageDialog(this,"Atributos do persnonagem escolhido:\n" + vampiro.toString());
+             
+         }else if (jRadioButtonBruxo.isSelected()){
+             //JOptionPane.showMessageDialog(this, "Você escolheu o personagem Mago!");
+             Personagem bruxo = new Personagem ();
+             bruxo.setNome("Bruxo");
+             bruxo.setClasse("heuaheu");
+             bruxo.setNivel(0);
+             bruxo.setVida(40);
+             bruxo.setAtaque(130);
+             JOptionPane.showMessageDialog(this,"Atributos do persnonagem escolhido:\n" + bruxo.toString());
          }
          }
     }//GEN-LAST:event_btnAvancarActionPerformed
