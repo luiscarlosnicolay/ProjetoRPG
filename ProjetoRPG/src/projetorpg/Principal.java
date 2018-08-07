@@ -5,6 +5,8 @@
  */
 package projetorpg;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author janquiel.kappler
@@ -60,51 +62,21 @@ public class Principal extends javax.swing.JFrame {
 
         buttonGroup1.add(jRadioButtonMago);
         jRadioButtonMago.setText("Mago");
-        jRadioButtonMago.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonMagoActionPerformed(evt);
-            }
-        });
 
         buttonGroup1.add(jRadioButtonFeiticeiro);
         jRadioButtonFeiticeiro.setText("Feiticeiro");
-        jRadioButtonFeiticeiro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonFeiticeiroActionPerformed(evt);
-            }
-        });
 
         buttonGroup1.add(jRadioButtonBruxo);
         jRadioButtonBruxo.setText("Bruxo");
-        jRadioButtonBruxo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonBruxoActionPerformed(evt);
-            }
-        });
 
         buttonGroup1.add(jRadioButtonGuerreiro);
         jRadioButtonGuerreiro.setText("Guerreiro");
-        jRadioButtonGuerreiro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonGuerreiroActionPerformed(evt);
-            }
-        });
 
         buttonGroup1.add(jRadioButtonVampiro);
         jRadioButtonVampiro.setText("Vampiro");
-        jRadioButtonVampiro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonVampiroActionPerformed(evt);
-            }
-        });
 
         buttonGroup1.add(jRadioButtonLobisomem);
         jRadioButtonLobisomem.setText("Lobisomem");
-        jRadioButtonLobisomem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonLobisomemActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -162,62 +134,45 @@ public class Principal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jRadioButtonMagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMagoActionPerformed
-        // TODO add your handling code here:
-        boolean radio;
-        radio =  jRadioButtonMago.isSelected();
-        jRadioButtonMago.setSelected(radio);
-    }//GEN-LAST:event_jRadioButtonMagoActionPerformed
 
     private void btnAvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvancarActionPerformed
         // TODO add your handling code here:
-        if(radio == true) {
-            System.out.println("Personagem: " + radio);}
-            else {
-            System.out.println("Nulo");}
+        if ((!jRadioButtonMago.isSelected()) && (!jRadioButtonFeiticeiro.isSelected()) && 
+            (!jRadioButtonGuerreiro.isSelected()) && (!jRadioButtonLobisomem.isSelected()) && 
+            (!jRadioButtonVampiro.isSelected()) &&  (!jRadioButtonBruxo.isSelected())) {
+              JOptionPane.showMessageDialog(this, "Selecione um personagem!");
+        } else {
+            
+         if (jRadioButtonGuerreiro.isSelected()) {
+             JOptionPane.showMessageDialog(this, "Você escolheu o personagem Guerreiro!");
+             Personagem guerreiro = new Personagem ();
+             guerreiro.setNome("Janquiel Dragons");
+             guerreiro.setClasse("Guerreiro");
+             guerreiro.setNivel(0);
+             guerreiro.setVida(100);
+             guerreiro.setAtaque(200);
+             System.out.println("Atributos do persnonagem escolhido:\n" + guerreiro.toString());
+         }
+         else if (jRadioButtonMago.isSelected()){
+             JOptionPane.showMessageDialog(this, "Você escolheu o personagem Mago!");
+             Personagem mago = new Personagem ();
+             mago.setNome("Luis Magic");
+             mago.setClasse("Mago");
+             mago.setNivel(0);
+             mago.setVida(50);
+             mago.setAtaque(150);
+             System.out.println("Atributos do persnonagem escolhido:\n" + mago.toString());
+             
+         }
+         }
     }//GEN-LAST:event_btnAvancarActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
-
-    private void jRadioButtonFeiticeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonFeiticeiroActionPerformed
-        // TODO add your handling code here:
-        boolean radio;
-        radio =  jRadioButtonFeiticeiro.isSelected();
-        jRadioButtonFeiticeiro.setSelected(radio);
-    }//GEN-LAST:event_jRadioButtonFeiticeiroActionPerformed
-
-    private void jRadioButtonBruxoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonBruxoActionPerformed
-        // TODO add your handling code here:
-        boolean radio;
-        radio =  jRadioButtonBruxo.isSelected();
-        jRadioButtonBruxo.setSelected(radio);
-    }//GEN-LAST:event_jRadioButtonBruxoActionPerformed
-
-    private void jRadioButtonGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonGuerreiroActionPerformed
-        // TODO add your handling code here:
-        boolean radio;
-        radio =  jRadioButtonGuerreiro.isSelected();
-        jRadioButtonGuerreiro.setSelected(radio);
-    }//GEN-LAST:event_jRadioButtonGuerreiroActionPerformed
-
-    private void jRadioButtonVampiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonVampiroActionPerformed
-        // TODO add your handling code here:
-        boolean radio;
-        radio =  jRadioButtonVampiro.isSelected();
-        jRadioButtonVampiro.setSelected(radio);
-    }//GEN-LAST:event_jRadioButtonVampiroActionPerformed
-
-    private void jRadioButtonLobisomemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonLobisomemActionPerformed
-        // TODO add your handling code here:
-        boolean radio;
-        radio =  jRadioButtonLobisomem.isSelected();
-        jRadioButtonLobisomem.setSelected(radio);
-    }//GEN-LAST:event_jRadioButtonLobisomemActionPerformed
 
     /**
      * @param args the command line arguments

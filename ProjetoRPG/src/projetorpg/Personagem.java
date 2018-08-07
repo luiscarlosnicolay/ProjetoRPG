@@ -57,6 +57,16 @@ public class Personagem {
         this.ataque = ataque;
     }
     
+        public String toString() {
+        return
+        "Nome: " + nome + "\n" +        
+        "Classe: " + classe + "\n" +
+        "Nível: " + nivel + "\n" +
+        "Vida: " + vida + "\n" +
+        "Ataque: " + ataque + "\n";      
+ 
+                
+    }
     
     
 }
