@@ -201,8 +201,8 @@ public class TelaConfronto extends javax.swing.JFrame {
                             .addComponent(lblVida))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(lblAtaque)))
+                            .addComponent(lblAtaque)
+                            .addComponent(jLabel1)))
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(185, Short.MAX_VALUE))
         );
