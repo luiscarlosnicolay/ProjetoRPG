@@ -5,6 +5,7 @@
  */
 package projetorpg;
 
+import ferramentas.CaixaDeDialogo;
 import javax.swing.JOptionPane;
 
 /**
@@ -39,6 +40,8 @@ public class Principal extends javax.swing.JFrame {
         jRadioButtonGuerreiro = new javax.swing.JRadioButton();
         jRadioButtonIlusionista = new javax.swing.JRadioButton();
         jSeparator2 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
+        txtNomePersonagem = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,6 +73,14 @@ public class Principal extends javax.swing.JFrame {
         buttonGroup1.add(jRadioButtonIlusionista);
         jRadioButtonIlusionista.setText("Ilusionista");
 
+        jLabel1.setText("Nome:");
+
+        txtNomePersonagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomePersonagemActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,7 +102,11 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnSair)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAvancar)))
+                        .addComponent(btnAvancar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNomePersonagem)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -111,11 +126,15 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jRadioButtonIlusionista))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtNomePersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSair)
                     .addComponent(btnAvancar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -170,6 +189,10 @@ public class Principal extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(this,"Atributos do persnonagem escolhido:\n" + ilusionista.toString());
          }
         }*/
+        
+        if(txtNomePersonagem.getText().trim().length() > 3){
+            
+        
         Personagem personagemEscolhido = escolherClasse();
         
         //Avançar para tela de confronto
@@ -179,6 +202,10 @@ public class Principal extends javax.swing.JFrame {
         
         //Colocar a tela atual não visível
         this.setVisible(false);
+        
+        }else{
+            CaixaDeDialogo.obterinstancia().exibirMensagem("Informe um nome com pelo menos 4 caracteres","ERRRRROOOOOU",'e');
+        }
     }//GEN-LAST:event_btnAvancarActionPerformed
 
     
@@ -186,26 +213,27 @@ public class Principal extends javax.swing.JFrame {
     try{
         Personagem personagem = new Personagem();
         //Preenche os atributos do personagem conforme a classe escolhida
+        personagem.setNome(txtNomePersonagem.getText().trim());
         if(jRadioButtonGuerreiro.isSelected()) {
-             personagem.setNome("Akiles");
+             //personagem.setNome("Akiles");
              personagem.setClasse("Guerreiro");
              personagem.setNivel(0);
              personagem.setVida(100);
              personagem.setAtaque(200);
         }else if(jRadioButtonMago.isSelected()) {
-             personagem.setNome("Criotek");
+             //personagem.setNome("Criotek");
              personagem.setClasse("Mago");
              personagem.setNivel(0);
              personagem.setVida(50);
              personagem.setAtaque(150);
         }else if(jRadioButtonFeiticeiro.isSelected()) {
-             personagem.setNome("Nanak");
+             //personagem.setNome("Nanak");
              personagem.setClasse("Feiticeiro");
              personagem.setNivel(0);
              personagem.setVida(80);
              personagem.setAtaque(190);
         }else if(jRadioButtonIlusionista.isSelected()) {
-             personagem.setNome("Daben");
+             //personagem.setNome("Daben");
              personagem.setClasse("Ilusionista");
              personagem.setNivel(0);
              personagem.setVida(40);
@@ -221,6 +249,10 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void txtNomePersonagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomePersonagemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomePersonagemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,6 +293,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnAvancar;
     private javax.swing.JButton btnSair;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton jRadioButtonFeiticeiro;
     private javax.swing.JRadioButton jRadioButtonGuerreiro;
     private javax.swing.JRadioButton jRadioButtonIlusionista;
@@ -268,5 +301,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lbl1;
+    private javax.swing.JTextField txtNomePersonagem;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,23 +5,79 @@
  */
 package projetorpg;
 
+import ferramentas.CaixaDeDialogo;
+import java.util.Random;
+
 /**
  *
  * @author luis.nicolay
  */
 public class TelaConfronto extends javax.swing.JFrame {
+    
+    Personagem personagem;
+    Oponente oponente = new Oponente();
+    Random gerador = new Random();
 
     /**
      * Creates new form TelaConfronto
      */
     public TelaConfronto(Personagem personagem) {
         initComponents();
-        //Preenche o nome da Classe escolhida
+        
+        this.personagem = personagem;
+        //Preenche os dados do personagem
+        /*lblNome.setText(personagem.getNome());
+        lblClasse.setText(personagem.getClasse());
+        lblNivel.setText(String.valueOf(personagem.getNivel()));
+        lblVida.setText(String.valueOf(personagem.getVida()));
+        lblAtaque.setText(String.valueOf(personagem.getAtaque()));*/
+        mostrarPersonagem();
+        mostrarOponente();
+    }
+    
+    private void mostrarPersonagem(){
         lblNome.setText(personagem.getNome());
         lblClasse.setText(personagem.getClasse());
-        lblNivel.setText(Integer.toString(personagem.getNivel()));
-        lblVida.setText(Integer.toString(personagem.getVida()));
-        lblAtaque.setText(Integer.toString(personagem.getAtaque())); 
+        lblNivel.setText(String.valueOf(personagem.getNivel()));
+        lblVida.setText(String.valueOf(personagem.getVida()));
+        lblAtaque.setText(String.valueOf(personagem.getAtaque()));
+    }
+    
+    private void gerarOponente() {
+        try {
+            oponente.setAtaque(gerador.nextInt(35) + 1);
+            oponente.setVida(gerador.nextInt(100) + 1);
+            oponente.setNivel(gerador.nextInt(10) + 1);
+            
+        }catch(Exception ex){
+            CaixaDeDialogo.obterinstancia().exibirMensagem(ex.getMessage().toString(),'e');
+        }
+    }
+    
+    private void mostrarOponente(){
+        lblNome.setText(oponente.getNome());
+        lblClasse.setText(oponente.getClasse());
+        lblNivel.setText(String.valueOf(oponente.getNivel()));
+        lblVida.setText(String.valueOf(oponente.getVida()));
+        lblAtaque.setText(String.valueOf(oponente.getAtaque()));
+    }
+    
+    private void ataque(){
+        //personagem ataca o oponente
+        int ataque = 0;
+        int valorDado = gerador.nextInt(20) + 1;
+        
+        if(gerador.nextInt(20) + 1 > 13) {//ataque critico
+            ataque = personagem.getAtaque() / 2;
+        }else{
+            ataque = personagem.getAtaque() / 3;
+        }
+        System.out.println("Dado: " + valorDado);
+        System.out.println("Ataque: " + ataque);
+        
+        //int ataque = personagem.getAtaque();
+        int vidaRestante = oponente.getVida() - ataque;
+        oponente.setVida(vidaRestante);
     }
 
     /**
@@ -54,6 +110,7 @@ public class TelaConfronto extends javax.swing.JFrame {
         lblNomeOponente = new javax.swing.JLabel();
         lblClasseOponente = new javax.swing.JLabel();
         lblNivelOponente = new javax.swing.JLabel();
+        btnAtacar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,6 +157,13 @@ public class TelaConfronto extends javax.swing.JFrame {
 
         lblNivelOponente.setText("...");
 
+        btnAtacar.setText("Atacar");
+        btnAtacar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtacarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -107,31 +171,34 @@ public class TelaConfronto extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnAtacar)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblVida))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblVida))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblAtaque))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblNivel))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblNome)))
+                                .addGap(315, 315, 315))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
+                                .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblAtaque))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblNivel))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblNome)))
-                        .addGap(315, 315, 315))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblClasse)
-                        .addGap(319, 319, 319)))
-                .addComponent(jLabel6)
+                                .addComponent(lblClasse)
+                                .addGap(319, 319, 319)))
+                        .addComponent(jLabel6)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 222, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,11 +271,23 @@ public class TelaConfronto extends javax.swing.JFrame {
                             .addComponent(lblAtaque)
                             .addComponent(jLabel1)))
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
+                .addComponent(btnAtacar)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtacarActionPerformed
+        // TODO add your handling code here:
+        ataque();
+        
+        if(oponente.getVida() > 0){
+            
+        }
+        mostrarOponente();
+    }//GEN-LAST:event_btnAtacarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,6 +325,7 @@ public class TelaConfronto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtacar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
