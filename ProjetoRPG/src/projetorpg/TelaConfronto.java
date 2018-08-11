@@ -286,9 +286,11 @@ public class TelaConfronto extends javax.swing.JFrame {
         
         ataqueOponente();
         
-        if(personagem.getVida() <= 0){
+        if(personagem.getVida() < 0){
             System.out.println("SE FODEU");
+               System.exit(0);
         }
+           
     }//GEN-LAST:event_btnAtacarActionPerformed
 
     /**
