@@ -55,11 +55,9 @@ public class TelaConfronto extends javax.swing.JFrame {
     }
     
     private void mostrarOponente(){
-        lblNome.setText(oponente.getNome());
-        lblClasse.setText(oponente.getClasse());
-        lblNivel.setText(String.valueOf(oponente.getNivel()));
-        lblVida.setText(String.valueOf(oponente.getVida()));
-        lblAtaque.setText(String.valueOf(oponente.getAtaque()));
+        lblNivelOponente.setText(String.valueOf(oponente.getNivel()));
+        lblVidaOponente.setText(String.valueOf(oponente.getVida()));
+        lblAtaqueOponente.setText(String.valueOf(oponente.getAtaque()));
     }
     
     private void ataque(){
@@ -102,13 +100,9 @@ public class TelaConfronto extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         lblVidaOponente = new javax.swing.JLabel();
         lblAtaqueOponente = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        lblNomeOponente = new javax.swing.JLabel();
-        lblClasseOponente = new javax.swing.JLabel();
         lblNivelOponente = new javax.swing.JLabel();
         btnAtacar = new javax.swing.JButton();
 
@@ -141,19 +135,11 @@ public class TelaConfronto extends javax.swing.JFrame {
 
         lblAtaqueOponente.setText("...");
 
-        jLabel7.setText("Nome:");
-
         jLabel8.setText("Vida:");
-
-        jLabel9.setText("Classe:");
 
         jLabel10.setText("Nível:");
 
         jLabel11.setText("Ataque:");
-
-        lblNomeOponente.setText("...");
-
-        lblClasseOponente.setText("...");
 
         lblNivelOponente.setText("...");
 
@@ -199,57 +185,27 @@ public class TelaConfronto extends javax.swing.JFrame {
                                 .addComponent(lblClasse)
                                 .addGap(319, 319, 319)))
                         .addComponent(jLabel6)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 222, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel8)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(lblVidaOponente))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel11)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(lblAtaqueOponente))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel7)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(lblNomeOponente))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel10)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(lblNivelOponente)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel9)
+                        .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblClasseOponente)
-                        .addGap(4, 4, 4)))
-                .addGap(120, 120, 120))
+                        .addComponent(lblVidaOponente))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblAtaqueOponente))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblNivelOponente)))
+                .addGap(111, 111, 111))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(lblNomeOponente))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(lblClasseOponente))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(lblNivelOponente))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(lblVidaOponente))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(lblAtaqueOponente)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -270,7 +226,19 @@ public class TelaConfronto extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblAtaque)
                             .addComponent(jLabel1)))
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(lblNivelOponente))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(lblVidaOponente))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(lblAtaqueOponente))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
                 .addComponent(btnAtacar)
                 .addContainerGap())
@@ -284,9 +252,11 @@ public class TelaConfronto extends javax.swing.JFrame {
         ataque();
         
         if(oponente.getVida() > 0){
-            
+            mostrarOponente();
+        }else{
+            gerarOponente();
+            mostrarOponente();
         }
-        mostrarOponente();
     }//GEN-LAST:event_btnAtacarActionPerformed
 
     /**
@@ -334,17 +304,13 @@ public class TelaConfronto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel lblAtaque;
     private javax.swing.JLabel lblAtaqueOponente;
     private javax.swing.JLabel lblClasse;
-    private javax.swing.JLabel lblClasseOponente;
     private javax.swing.JLabel lblNivel;
     private javax.swing.JLabel lblNivelOponente;
     private javax.swing.JLabel lblNome;
-    private javax.swing.JLabel lblNomeOponente;
     private javax.swing.JLabel lblVida;
     private javax.swing.JLabel lblVidaOponente;
     // End of variables declaration//GEN-END:variables
