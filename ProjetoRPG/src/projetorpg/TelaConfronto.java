@@ -17,6 +17,7 @@ public class TelaConfronto extends javax.swing.JFrame {
     Personagem personagem;
     Oponente oponente = new Oponente();
     Random gerador = new Random();
+    int valorDadoJogar;
 
     /**
      * Creates new form TelaConfronto
@@ -60,22 +61,39 @@ public class TelaConfronto extends javax.swing.JFrame {
         lblAtaqueOponente.setText(String.valueOf(oponente.getAtaque()));
     }
     
-    private void ataque(){
+    private void ataquePersonagem(){
         //personagem ataca o oponente
-        int ataque = 0;
+        int ataquePersonagem = 0;
         int valorDado = gerador.nextInt(20) + 1;
         
         if(gerador.nextInt(20) + 1 > 13) {//ataque critico
-            ataque = personagem.getAtaque() / 2;
+            ataquePersonagem = personagem.getAtaque() / 2;
         }else{
-            ataque = personagem.getAtaque() / 3;
+            ataquePersonagem = personagem.getAtaque() / 3;
         }
         System.out.println("Dado: " + valorDado);
-        System.out.println("Ataque: " + ataque);
+        System.out.println("Ataque: " + ataquePersonagem);
         
         //int ataque = personagem.getAtaque();
-        int vidaRestante = oponente.getVida() - ataque;
-        oponente.setVida(vidaRestante);
+        int vidaRestante = oponente.getVida() - ataquePersonagem;
+        oponente.setVida(vidaRestante);                
+    }
+    
+    private void ataqueOponente(){
+        int ataqueOponente = 0;
+        int valorDado1 = gerador.nextInt(20) + 1;
+        
+        if(gerador.nextInt(20) + 1 > 13) {//ataque critico
+            ataqueOponente = personagem.getAtaque() / 2;
+        }else{
+            ataqueOponente = personagem.getAtaque() / 3;
+        }
+        System.out.println("Dado: " + valorDado1);
+        System.out.println("Ataque: " + ataqueOponente);
+        
+        //int ataque = personagem.getAtaque();
+        int vidaRestante = personagem.getVida() - ataqueOponente;
+        personagem.setVida(vidaRestante);
     }
 
     /**
@@ -249,13 +267,27 @@ public class TelaConfronto extends javax.swing.JFrame {
 
     private void btnAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtacarActionPerformed
         // TODO add your handling code here:
-        ataque();
+        valorDadoJogar = gerador.nextInt(2) + 1;
+        if(valorDadoJogar ==1){
+            ataquePersonagem();
+            mostrarOponente();
+        }else{
+            ataqueOponente();
+            mostrarPersonagem();
+        }
+        ataquePersonagem();
         
         if(oponente.getVida() > 0){
             mostrarOponente();
         }else{
             gerarOponente();
             mostrarOponente();
+        }
+        
+        ataqueOponente();
+        
+        if(personagem.getVida() <= 0){
+            System.out.println("SE FODEU");
         }
     }//GEN-LAST:event_btnAtacarActionPerformed
 
