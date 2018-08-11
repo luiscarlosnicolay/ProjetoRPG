@@ -38,7 +38,7 @@ public class Principal extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jRadioButtonFeiticeiro = new javax.swing.JRadioButton();
         jRadioButtonGuerreiro = new javax.swing.JRadioButton();
-        jRadioButtonIlusionista = new javax.swing.JRadioButton();
+        jRadioButtonPaladino = new javax.swing.JRadioButton();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         txtNomePersonagem = new javax.swing.JTextField();
@@ -63,15 +63,24 @@ public class Principal extends javax.swing.JFrame {
 
         buttonGroup1.add(jRadioButtonMago);
         jRadioButtonMago.setText("Mago");
+        jRadioButtonMago.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Mago.png"))); // NOI18N
+        jRadioButtonMago.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMagoActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(jRadioButtonFeiticeiro);
         jRadioButtonFeiticeiro.setText("Feiticeiro");
+        jRadioButtonFeiticeiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Feiticeiro.png"))); // NOI18N
 
         buttonGroup1.add(jRadioButtonGuerreiro);
         jRadioButtonGuerreiro.setText("Guerreiro");
+        jRadioButtonGuerreiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Guerreiro.png"))); // NOI18N
 
-        buttonGroup1.add(jRadioButtonIlusionista);
-        jRadioButtonIlusionista.setText("Ilusionista");
+        buttonGroup1.add(jRadioButtonPaladino);
+        jRadioButtonPaladino.setText("Paladino");
+        jRadioButtonPaladino.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Paladino.png"))); // NOI18N
 
         jLabel1.setText("Nome:");
 
@@ -91,22 +100,26 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jSeparator2)
                     .addComponent(jSeparator1)
                     .addComponent(lbl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jRadioButtonMago, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButtonFeiticeiro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jRadioButtonGuerreiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButtonIlusionista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSair)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAvancar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNomePersonagem)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jRadioButtonMago, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jRadioButtonFeiticeiro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(87, 87, 87)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButtonPaladino)
+                                    .addComponent(jRadioButtonGuerreiro)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(btnSair)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnAvancar))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtNomePersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -123,10 +136,10 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButtonFeiticeiro)
-                    .addComponent(jRadioButtonIlusionista))
+                    .addComponent(jRadioButtonPaladino))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtNomePersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -219,25 +232,25 @@ public class Principal extends javax.swing.JFrame {
              personagem.setClasse("Guerreiro");
              personagem.setNivel(0);
              personagem.setVida(100);
-             personagem.setAtaque(200);
+             personagem.setAtaque(90);
         }else if(jRadioButtonMago.isSelected()) {
              //personagem.setNome("Criotek");
              personagem.setClasse("Mago");
              personagem.setNivel(0);
-             personagem.setVida(50);
-             personagem.setAtaque(150);
+             personagem.setVida(60);
+             personagem.setAtaque(130);
         }else if(jRadioButtonFeiticeiro.isSelected()) {
              //personagem.setNome("Nanak");
              personagem.setClasse("Feiticeiro");
              personagem.setNivel(0);
-             personagem.setVida(80);
-             personagem.setAtaque(190);
-        }else if(jRadioButtonIlusionista.isSelected()) {
+             personagem.setVida(70);
+             personagem.setAtaque(100);
+        }else if(jRadioButtonPaladino.isSelected()) {
              //personagem.setNome("Daben");
-             personagem.setClasse("Ilusionista");
+             personagem.setClasse("Paladino");
              personagem.setNivel(0);
-             personagem.setVida(40);
-             personagem.setAtaque(130);            
+             personagem.setVida(80);
+             personagem.setAtaque(78);            
         }
         
         return personagem;
@@ -253,6 +266,10 @@ public class Principal extends javax.swing.JFrame {
     private void txtNomePersonagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomePersonagemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomePersonagemActionPerformed
+
+    private void jRadioButtonMagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMagoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButtonMagoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,8 +313,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton jRadioButtonFeiticeiro;
     private javax.swing.JRadioButton jRadioButtonGuerreiro;
-    private javax.swing.JRadioButton jRadioButtonIlusionista;
     private javax.swing.JRadioButton jRadioButtonMago;
+    private javax.swing.JRadioButton jRadioButtonPaladino;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lbl1;
