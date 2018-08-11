@@ -62,6 +62,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(jRadioButtonMago);
+        jRadioButtonMago.setSelected(true);
         jRadioButtonMago.setText("Mago");
         jRadioButtonMago.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Mago.png"))); // NOI18N
         jRadioButtonMago.addActionListener(new java.awt.event.ActionListener() {
@@ -237,7 +238,7 @@ public class Principal extends javax.swing.JFrame {
              //personagem.setNome("Criotek");
              personagem.setClasse("Mago");
              personagem.setNivel(0);
-             personagem.setVida(60);
+             personagem.setVida(80);
              personagem.setAtaque(130);
         }else if(jRadioButtonFeiticeiro.isSelected()) {
              //personagem.setNome("Nanak");
