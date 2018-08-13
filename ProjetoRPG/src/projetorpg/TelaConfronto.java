@@ -18,6 +18,9 @@ public class TelaConfronto extends javax.swing.JFrame {
     Oponente oponente = new Oponente();
     Random gerador = new Random();
     int valorDadoJogar;
+    int valorDado;
+    int valorDado1;
+    Principal principal = new Principal();
 
     /**
      * Creates new form TelaConfronto
@@ -296,11 +299,12 @@ public class TelaConfronto extends javax.swing.JFrame {
         
         ataqueOponente();
         
-        if(personagem.getVida() < 0){
-            System.out.println("SE FODEU");
+        if(personagem.getVida() <= 0){
+            CaixaDeDialogo.obterinstancia().exibirMensagem("Sua vida acabou!!" + "\nSE FODEU","ERRRRROOOOOU",'e');
                //System.exit(0);
-        }
-           
+               this.dispose();
+               principal.setVisible(true);           
+        }        
     }//GEN-LAST:event_btnAtacarActionPerformed
 
     /**
