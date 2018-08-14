@@ -20,7 +20,11 @@ public class TelaConfronto extends javax.swing.JFrame {
     int valorDadoJogar;
     int valorDado;
     int valorDado1;
-    Principal principal = new Principal();
+    int vidaMaximaOponente = 0;
+    int vidaMaximaPersonagem = 0;
+    
+    
+    Principal principal = new Principal();    
 
     /**
      * Creates new form TelaConfronto
@@ -35,6 +39,8 @@ public class TelaConfronto extends javax.swing.JFrame {
         lblNivel.setText(String.valueOf(personagem.getNivel()));
         lblVida.setText(String.valueOf(personagem.getVida()));
         lblAtaque.setText(String.valueOf(personagem.getAtaque()));*/
+        vidaMaximaPersonagem = personagem.getVida();
+        gerarOponente();
         mostrarPersonagem();
         mostrarOponente();
         lblValorDado.setText("Sua vez de Atacar, " + personagem.getNome());
@@ -48,6 +54,11 @@ public class TelaConfronto extends javax.swing.JFrame {
         lblNivel.setText(String.valueOf(personagem.getNivel()));
         lblVida.setText(String.valueOf(personagem.getVida()));
         lblAtaque.setText(String.valueOf(personagem.getAtaque()));
+        
+        prbVidaPersonagem.setMinimum(0);
+        prbVidaPersonagem.setMaximum(vidaMaximaPersonagem);
+        prbVidaPersonagem.setValue(personagem.getVida());
+        prbVidaPersonagem.setString(String.valueOf(personagem.getVida()));
     }
     
     private void gerarOponente() {
@@ -55,6 +66,7 @@ public class TelaConfronto extends javax.swing.JFrame {
             oponente.setAtaque(gerador.nextInt(35) + 1);
             oponente.setVida(gerador.nextInt(100) + 1);
             oponente.setNivel(gerador.nextInt(10) + 1);
+            vidaMaximaOponente = oponente.getVida();
             
         }catch(Exception ex){
             CaixaDeDialogo.obterinstancia().exibirMensagem(ex.getMessage().toString(),'e');
@@ -65,6 +77,11 @@ public class TelaConfronto extends javax.swing.JFrame {
         lblNivelOponente.setText(String.valueOf(oponente.getNivel()));
         lblVidaOponente.setText(String.valueOf(oponente.getVida()));
         lblAtaqueOponente.setText(String.valueOf(oponente.getAtaque()));
+        
+        prbVidaOponente.setMinimum(0);
+        prbVidaOponente.setMaximum(vidaMaximaOponente);
+        prbVidaOponente.setValue(oponente.getVida());
+        prbVidaOponente.setString(String.valueOf(oponente.getVida()));
     }
     
     private void ataquePersonagem(){
@@ -139,6 +156,8 @@ public class TelaConfronto extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         lblValorDadoOponente = new javax.swing.JLabel();
         lblValorDadoPersonagem = new javax.swing.JLabel();
+        prbVidaOponente = new javax.swing.JProgressBar();
+        prbVidaPersonagem = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -193,6 +212,14 @@ public class TelaConfronto extends javax.swing.JFrame {
         lblValorDadoOponente.setText("...");
 
         lblValorDadoPersonagem.setText("...");
+
+        prbVidaOponente.setForeground(new java.awt.Color(51, 204, 0));
+        prbVidaOponente.setValue(70);
+        prbVidaOponente.setStringPainted(true);
+
+        prbVidaPersonagem.setForeground(new java.awt.Color(51, 204, 0));
+        prbVidaPersonagem.setValue(70);
+        prbVidaPersonagem.setStringPainted(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -251,11 +278,17 @@ public class TelaConfronto extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblValorDadoOponente)))
-                .addGap(65, 65, 65))
+                        .addComponent(lblValorDadoOponente))
+                    .addComponent(prbVidaOponente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49))
             .addGroup(layout.createSequentialGroup()
-                .addGap(362, 362, 362)
-                .addComponent(lblValorDado)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(362, 362, 362)
+                        .addComponent(lblValorDado))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(prbVidaPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -264,8 +297,37 @@ public class TelaConfronto extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                        .addComponent(lblValorDado)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAtacar))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(lblNome))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel3)
+                                    .addComponent(lblClasse))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel4)
+                                    .addComponent(lblNivel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(lblVida))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblAtaque)
+                                    .addComponent(jLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(lblValorDadoPersonagem)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel10)
@@ -281,35 +343,11 @@ public class TelaConfronto extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel9)
-                                    .addComponent(lblValorDadoOponente))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
-                        .addComponent(lblValorDado)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAtacar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(lblNome))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(lblClasse))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(lblNivel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(lblVida))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblAtaque)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(lblValorDadoPersonagem))
+                                    .addComponent(lblValorDadoOponente))
+                                .addGap(18, 18, 18)
+                                .addComponent(prbVidaOponente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(prbVidaPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -414,5 +452,7 @@ public class TelaConfronto extends javax.swing.JFrame {
     private javax.swing.JLabel lblValorDadoPersonagem;
     private javax.swing.JLabel lblVida;
     private javax.swing.JLabel lblVidaOponente;
+    private javax.swing.JProgressBar prbVidaOponente;
+    private javax.swing.JProgressBar prbVidaPersonagem;
     // End of variables declaration//GEN-END:variables
 }
