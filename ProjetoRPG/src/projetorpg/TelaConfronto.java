@@ -381,7 +381,7 @@ public class TelaConfronto extends javax.swing.JFrame {
         } else {
             mostrarOponente();
             CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns, você derrotou o oponente " + oponente.getNome()+"!","Parabéns",'i');
-            personagem.setVida(personagem.getVida()+200);
+            personagem.setVida(personagem.getVida()+50);
             mostrarPersonagem(); //Mostra o personagem com a vida atualizada
             gerarOponente(); // gera o novo oponente
             mostrarOponente(); // mostra o novo oponetne gerado
